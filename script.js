@@ -30,15 +30,15 @@ var pokemon = [];
 async function allpokemon() {
     try {
         let i = 0
-        // while (i < 13) {
+        while (i < 13) {
             for (let j = i * 100 + 1; j <= (i + 1) * 100; j++) {
                 const url = `https://pokeapi.co/api/v2/pokemon/${j}`;
                 pokemon.push(await fetch(url).then(res => res.json()));
             }
             await ajj(pokemon)
             pokemon = []
-        //     i++
-        // }
+            i++
+        }
 
     } catch (error) {
         console.log(error);
